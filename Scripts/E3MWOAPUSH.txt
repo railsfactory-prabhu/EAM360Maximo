@@ -1,0 +1,65 @@
+# This is the Automatoion Script for EAM360 Mobile App      
+# File Name:  E3MWOAPUSH                                                                                                                   
+# Description:  This script will send Push notification to android and IOS devices via pubnub channel. Notification is sent if approved work is assigned to User																           
+# Revision History:																          
+#  Date                     User           Comment											                          
+#  August 02, 2016   Selva          Creation	
+
+
+from java.io import IOException
+from java.rmi import RemoteException
+from java.util import HashMap
+from java.util import Map
+from java.util import Properties
+from com.ibm.json.java import JSONArray
+from com.ibm.json.java import JSONObject
+from psdi.iface.util import HttpPostClient
+from psdi.mbo import MboRemote
+from psdi.mbo import  MboSet
+from psdi.mbo import MboSetRemote
+from psdi.server import MXServer 
+from java.net import URLEncoder
+from java.net import URL
+
+#if userid is not None:
+if woparent is not None:
+ 
+ if  (stat=='APPR' or stat=='INPRG' or stat=='WMATL' or stat=='HOLD' ) and userid is not None:
+   name="http://pubnub.pubnub.com/publish";
+   configData = MXServer.getMXServer().getConfig();
+   pub_key = configData.getProperty("mxe.mobile.pubnub.pubkey");
+   sub_key = configData.getProperty("mxe.mobile.pubnub.subkey");
+   
+   natvj =JSONObject();
+   mapns= JSONObject();
+   data =  JSONObject()  ;
+   andromsg =JSONObject()  ;
+   anobj =JSONObject()  ;
+   #alobj = JSONObject();
+   #nameobj = JSONArray();
+ 
+   #data.put("alert", "Hi "+dispname+ ", Work(#) "+wonum+ " is been assigned ");
+   data.put("content-available",1); 
+   data.put("workorderid",woid);
+   data.put("type","deltachange");
+   #data.put("priority", 5);
+   #data.put("sound","bingbong.aiff");
+   #andromsg.put("summary", "Hi "+dispname+ ", Work(#) "+wonum+ " is been assigned ");
+   andromsg.put("type","deltachange");
+   andromsg.put("workorderid", woid);
+   anobj.put("data",andromsg);
+
+
+   mapns.put("aps", data );
+   natvj.put("pn_apns",mapns);
+   natvj.put("pn_gcm",anobj);
+
+   natvj.put("data"," WOACTIVITY modified")
+   #natvj.put("urlencode",params)
+   
+   postdata = natvj.toString();
+   msgappend = URLEncoder.encode(postdata, "UTF-8").replace("+", "%20");
+
+   urlname =name+"/"+pub_key+"/"+sub_key+"/0/"+channel+"/0/"+msgappend
+   ur = URL(urlname);
+   ur.openConnection().getInputStream();
