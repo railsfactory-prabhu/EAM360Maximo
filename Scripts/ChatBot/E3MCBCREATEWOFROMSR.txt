@@ -10,6 +10,27 @@ from psdi.security import UserInfo
 from psdi.server import MXServer
 from psdi.app.workorder import WORemote
 
+jobPlan='';
+assetNum=mbo.getString("ASSETNUM");
+siteID=mbo.getString("SITEID");
+orgID=mbo.getString("ORGID");
 ismobile=mbo.getBoolean("E3MSRFROMMOBILE");
 if ismobile == True:
-	mbo.createWorkorder();
+	#If the asset has JobPlan apply job plan to the workorder 
+	if assetNum is not None:
+		assetJobPlanSet=MXServer.getMXServer().getMboSet("JPASSETSPLINK",MXServer.getMXServer().getSystemUserInfo());
+		assetJobPlanSetWhere="ASSETNUM='"+assetNum+"' AND SITEID='"+siteID+"' AND ORGID ='"+orgID+"'";
+		assetJobPlanSet.setWhere(assetJobPlanSetWhere);
+		print 'Inside Jobplan Set';
+		assetJobPlanSetCount=assetJobPlanSet.count();
+		print 'assetJobPlanSetCount: ' +str(assetJobPlanSetCount);
+		if assetJobPlanSetCount > 0:
+			print 'Inside assetJobPlanSet';
+			assetJobPlanMbo=assetJobPlanSet.getMbo(0);
+			jobPlan= assetJobPlanMbo.getString("JPNUM");
+	mbo.createWorkorder(jobPlan);
+
+
+
+
+	
