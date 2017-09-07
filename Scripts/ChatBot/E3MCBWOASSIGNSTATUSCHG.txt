@@ -4,13 +4,22 @@
 # Launch Point Object : WORKORDER
 # Events : Save
 # Launch on Save During : Add, Before Save
-
+# Created On : 01-Sep-2017
+# Revision : 1
+# Author : Prabhu K
+# Revision Date: 07-SEP-2017
 
 from psdi.security import UserInfo
 from psdi.server import MXServer
 from psdi.mbo import MboConstants
 
 ticketID=mbo.getString("ORIGRECORDID");
+
+
+curDate= MXServer.getMXServer().getDate();
+mbo.setValue("SCHEDSTART",curDate,2L);
+mbo.setValue("SCHEDFINISH",curDate,2L);
+
 if ticketID is not None:
 	print 'Inside WO Status Change';
 	mbo.changeStatus("APPR", MXServer.getMXServer().getDate(),"Changed by EAM360 Chatbot",MboConstants.NOACCESSCHECK);
