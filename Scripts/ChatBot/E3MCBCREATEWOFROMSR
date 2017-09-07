@@ -1,0 +1,15 @@
+# Script for EAM360 ChatBot to create workorder from service request
+# Environment : Maximo v7.6.0.3
+# Launch Point type : Object
+# Launch Point Object : SR
+# Events : Save
+# Launch on Save During : Add, After Save
+
+from psdi.mbo import MboConstants
+from psdi.security import UserInfo
+from psdi.server import MXServer
+from psdi.app.workorder import WORemote
+
+ismobile=mbo.getBoolean("E3MSRFROMMOBILE");
+if ismobile == True:
+	mbo.createWorkorder();
