@@ -4,6 +4,10 @@
 # Launch Point Object : SR
 # Events : Save
 # Launch on Save During : Add, After Save
+# Revision : 2
+# Revision Date : 7-Sep-2017
+# Revision Done By: Prabhu K
+# Revision Comments : Added feature to apply asset Jobplan while creation of workorder.
 
 from psdi.mbo import MboConstants
 from psdi.security import UserInfo
