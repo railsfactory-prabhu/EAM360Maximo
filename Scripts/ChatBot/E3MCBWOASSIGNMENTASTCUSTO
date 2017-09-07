@@ -1,0 +1,45 @@
+# Create Assignments for Work Order while creating from SR through EAM360 Chatbot
+# Environment : Maximo v7.6.0.3
+# Launch Point type : Object
+# Launch Point Object : WORKORDER
+# Events : Save
+# Launch on Save During : Add, After Save
+# Launch Point Condition : ORIGRECORDID in (select TICKETID from SR where E3MSRFROMMOBILE=1)
+
+from psdi.security import UserInfo
+from psdi.server import MXServer
+from psdi.mbo import MboConstants
+
+ticketID=mbo.getString("ORIGRECORDID");
+assetNum=mbo.getString("ASSETNUM");
+siteID=mbo.getString("SITEID");
+orgID=mbo.getString("ORGID");
+woNum=mbo.getString("WONUM")
+if ticketID is not None:
+	assetCustoSet=MXServer.getMXServer().getMboSet("ASSETUSERCUST",MXServer.getMXServer().getSystemUserInfo());
+	assetCustoSetWhere="ASSETNUM='"+assetNum+"' AND SITEID='"+siteID+"' AND ORGID ='"+orgID+"'";
+	assetCustoSet.setWhere(assetCustoSetWhere);
+	assetCustoCount=assetCustoSet.count();
+	print 'assetCustoCount :' + str(assetCustoCount);
+	if assetCustoCount > 0 :
+		print 'There is a Custodian for Asset';
+		for i in range(0,assetCustoCount):
+                        print 'Inside FOR in assetCusto';
+			assetCustoPersonSet=assetCustoSet.getMbo(i);
+			assetCustoPerson=assetCustoPersonSet.getString("PERSONID");
+			print 'Current Custodian is :' + assetCustoPerson;
+			assignLaborSet=MXServer.getMXServer().getMboSet("LABOR",MXServer.getMXServer().getSystemUserInfo());
+			assignLaborSetWhere="PERSONID='"+assetCustoPerson+"' AND ORGID='"+ orgID +"' AND WORKSITE='"+siteID+"'";
+			assignLaborSet.setWhere(assignLaborSetWhere);
+			assignLaborSetCount=assignLaborSet.count();
+			if assignLaborSetCount > 0:
+				assignLaborSetMbo=assignLaborSet.getMbo(0);
+				assignLabor=assignLaborSetMbo.getString("PERSONID");
+				print 'The LaborID is:' + assignLabor;
+				assignmentMboSet=mbo.getMboSet("ASSIGNMENT");
+				assignmentLabor=assignmentMboSet.addAtEnd();
+				assignmentLabor.setValue("LABORCODE",assignLabor,11L);
+				assignmentLabor.setValue("WONUM",woNum,11L);
+				assignmentLabor.setValue("STATUS","ASSIGNED",11L);
+				assignmentLabor.setValue("ORGID",orgID,11L);
+				assignmentLabor.setValue("SITEID",siteID,11L);
