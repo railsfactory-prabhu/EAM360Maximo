@@ -1,0 +1,1512 @@
+{
+  "variables": [],
+  "info": {
+    "name": "EAM360 EntireCollection",
+    "_postman_id": "7244a2e1-b5ab-6cf8-f4df-554aa3441413",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "d30c17d7-fc5f-8f86-1e54-e56f42a5fbcb",
+      "name": "Authentication",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "5c0badd7-bd85-3f1d-a662-8fc3af952059",
+          "name": "Login API",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "MAXAUTH",
+                "value": "bWF4YWRtaW46bWF4YWRtaW4="
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "http://169.54.173.231/maxrest/rest/os/e3muser?loginid=~eq~MAXADMIN&_format=json&_compact=1",
+              "protocol": "http",
+              "host": [
+                "169",
+                "54",
+                "173",
+                "231"
+              ],
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "e3muser"
+              ],
+              "query": [
+                {
+                  "key": "loginid",
+                  "value": "~eq~MAXADMIN"
+                },
+                {
+                  "key": "_format",
+                  "value": "json"
+                },
+                {
+                  "key": "_compact",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a0a4abce-e56e-6f43-45f2-9e8ec40ac0aa",
+          "name": "http://169.54.173.231:9081/maxrest/rest/logout",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": "http://169.54.173.231:9081/maxrest/rest/logout",
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "079d69e1-7b66-6f14-259c-2e069002382c",
+          "name": "Logout API",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": "http://169.54.173.231:9081/maxrest/rest/logout",
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "4cb2f919-fc24-1ad1-b8bb-e01b8e9e4e3f",
+      "name": "Creation",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "7131c145-bd16-c4c4-eee7-150d30a5d5f3",
+          "name": "Create Labour Time",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "MAXAUTH",
+                "value": "bWF4YWRtaW46bWF4YWRtaW4="
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "LABTRANS.ID1.SITEID",
+                  "value": "BEDFORD",
+                  "type": "text"
+                },
+                {
+                  "key": "LABTRANS.ID1.STARTTIME",
+                  "value": "12:28 PM",
+                  "type": "text"
+                },
+                {
+                  "key": "LABTRANS.ID1.FINISHDATE",
+                  "value": "2016-06-06",
+                  "type": "text"
+                },
+                {
+                  "key": "_format",
+                  "value": "json",
+                  "type": "text"
+                },
+                {
+                  "key": "_compact",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "_action",
+                  "value": "AddChange",
+                  "type": "text"
+                },
+                {
+                  "key": "LABTRANS.ID1.STARTDATE",
+                  "value": "2016-06-06",
+                  "type": "text"
+                },
+                {
+                  "key": "LABTRANS.ID1.REGULARHRS",
+                  "value": "0.0",
+                  "type": "text"
+                },
+                {
+                  "key": "LABTRANS.ID1.LABORCODE",
+                  "value": "ADAMS",
+                  "type": "text"
+                },
+                {
+                  "key": "LABTRANS.ID1.FINISHTIME",
+                  "value": "12:28 PM",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "http://169.54.173.231:9081/maxrest/rest/os/e3mwoupdate/3717",
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0d3fc4b3-fbea-1081-72c1-4214333c4a9d",
+          "name": "AddFailureCode",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "MAXAUTH",
+                "value": "bWF4YWRtaW46bWF4YWRtaW4="
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "FAILURECODE",
+                  "value": "PRINTER",
+                  "type": "text"
+                },
+                {
+                  "key": "PROBLEMCODE",
+                  "value": "NOPRINT",
+                  "type": "text"
+                },
+                {
+                  "key": "FR1CODE",
+                  "value": "WRONGPRI",
+                  "type": "text"
+                },
+                {
+                  "key": "FR2CODE",
+                  "value": "SPECLOC",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://169.54.173.231/maxrest/rest/os/E3MWOUPDATE/2377?_action=AddChange&_format=json&_compact=1",
+              "protocol": "http",
+              "host": [
+                "169",
+                "54",
+                "173",
+                "231"
+              ],
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "E3MWOUPDATE",
+                "2377"
+              ],
+              "query": [
+                {
+                  "key": "_action",
+                  "value": "AddChange"
+                },
+                {
+                  "key": "_format",
+                  "value": "json"
+                },
+                {
+                  "key": "_compact",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "787429d1-0e6c-7018-664d-99f716711260",
+          "name": "AddMaterial",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "maxauth",
+                "value": "bWF4YWRtaW46bWF4YWRtaW4="
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "MATUSETRANS.ID4.ITEMNUM",
+                  "value": "11R22.5GT-5",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.LINETYPE",
+                  "value": "Item",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.DESCRIPTION",
+                  "value": "Filter, Primary Air",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.STORELOC",
+                  "value": "CENTRAL",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.SITEID",
+                  "value": "USA",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.POSITIVEQUANTITY",
+                  "value": "2",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://169.54.173.231:9081/maxrest/rest/os/E3MWOUPDATE/3938?_action=AddChange&_format=json&_compact=1",
+              "protocol": "http",
+              "host": [
+                "169",
+                "54",
+                "173",
+                "231"
+              ],
+              "port": "9081",
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "E3MWOUPDATE",
+                "3938"
+              ],
+              "query": [
+                {
+                  "key": "_action",
+                  "value": "AddChange"
+                },
+                {
+                  "key": "_format",
+                  "value": "json"
+                },
+                {
+                  "key": "_compact",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c9408aee-bb78-d4f8-6b3c-f1694bbccc7e",
+          "name": "Inserting task with attachments",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "maxauth",
+                "value": "bWF4YWRtaW46bWF4YWRtaW4="
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "WOACTIVITY.ID1.TASKID",
+                  "value": "20",
+                  "type": "text"
+                },
+                {
+                  "key": "WOACTIVITY.ID1.DESCRIPTION",
+                  "value": "boiler task",
+                  "type": "text"
+                },
+                {
+                  "key": "WOACTIVITY.ID1.ESTDUR",
+                  "value": "10",
+                  "type": "text"
+                },
+                {
+                  "key": "DOCLINKS.ID1.DOCTYPE",
+                  "value": "Attachments",
+                  "type": "text"
+                },
+                {
+                  "key": "DOCLINKS.ID1.DOCUMENTDATA",
+                  "value": "V09BQ1RJVklUWQ==",
+                  "type": "text"
+                },
+                {
+                  "key": "DOCLINKS.ID1.DOCUMENT",
+                  "value": "7000",
+                  "type": "text"
+                },
+                {
+                  "key": "DOCLINKS.ID1.DESCRIPTION",
+                  "value": "testingdoc.txt",
+                  "type": "text"
+                },
+                {
+                  "key": "DOCLINKS.ID1.URLTYPE",
+                  "value": "FILE",
+                  "type": "text"
+                },
+                {
+                  "key": "DOCLINKS.ID1.OWNERTABLE",
+                  "value": "WOACTIVITY",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://169.54.173.231:9081/maxrest/rest/os/E3MWOUPDATE/4303?_action=AddChange&_format=json&_compact=1",
+              "protocol": "http",
+              "host": [
+                "169",
+                "54",
+                "173",
+                "231"
+              ],
+              "port": "9081",
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "E3MWOUPDATE",
+                "4303"
+              ],
+              "query": [
+                {
+                  "key": "_action",
+                  "value": "AddChange"
+                },
+                {
+                  "key": "_format",
+                  "value": "json"
+                },
+                {
+                  "key": "_compact",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c259b6a5-03ad-ed0b-da15-ed31cf8d4259",
+          "name": "AddMaterial (Issue)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "maxauth",
+                "value": "bWF4YWRtaW46bWF4YWRtaW4="
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "MATUSETRANS.ID4.ITEMNUM",
+                  "value": "11R22.5GT-5",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.LINETYPE",
+                  "value": "Item",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.DESCRIPTION",
+                  "value": "Filter, Primary Air",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.STORELOC",
+                  "value": "CENTRAL",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.SITEID",
+                  "value": "USA",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.POSITIVEQUANTITY",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ISSUETYPE",
+                  "value": "ISSUE",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://169.54.173.231:9081/maxrest/rest/os/E3MWOUPDATE/3938?_action=AddChange&_format=json&_compact=1",
+              "protocol": "http",
+              "host": [
+                "169",
+                "54",
+                "173",
+                "231"
+              ],
+              "port": "9081",
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "E3MWOUPDATE",
+                "3938"
+              ],
+              "query": [
+                {
+                  "key": "_action",
+                  "value": "AddChange"
+                },
+                {
+                  "key": "_format",
+                  "value": "json"
+                },
+                {
+                  "key": "_compact",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a36aec55-467c-3908-371c-3b414ea39589",
+          "name": "AddMaterial (RETURN)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "maxauth",
+                "value": "bWF4YWRtaW46bWF4YWRtaW4="
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "MATUSETRANS.ID4.ITEMNUM",
+                  "value": "11R22.5GT-5",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.LINETYPE",
+                  "value": "Item",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.DESCRIPTION",
+                  "value": "Filter, Primary Air",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.STORELOC",
+                  "value": "CENTRAL",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.SITEID",
+                  "value": "USA",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ID4.POSITIVEQUANTITY",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "MATUSETRANS.ISSUETYPE",
+                  "value": "RETURN",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://169.54.173.231:9081/maxrest/rest/os/E3MWOUPDATE/3938?_action=AddChange&_format=json&_compact=1",
+              "protocol": "http",
+              "host": [
+                "169",
+                "54",
+                "173",
+                "231"
+              ],
+              "port": "9081",
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "E3MWOUPDATE",
+                "3938"
+              ],
+              "query": [
+                {
+                  "key": "_action",
+                  "value": "AddChange"
+                },
+                {
+                  "key": "_format",
+                  "value": "json"
+                },
+                {
+                  "key": "_compact",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "fbbc5bc5-f58d-b339-f93b-af397a37d974",
+      "name": "Fetching",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "133c4692-1092-2719-f491-27c4c3544071",
+          "name": "Get WorkOrders",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "MAXAUTH",
+                "value": "bWF4YWRtaW46bWF4YWRtaW4="
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "http://169.54.173.231/maxrest/rest/os/e3mwo?personid=~eq~MAXADMIN&_format=json&_compact=1",
+              "protocol": "http",
+              "host": [
+                "169",
+                "54",
+                "173",
+                "231"
+              ],
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "e3mwo"
+              ],
+              "query": [
+                {
+                  "key": "personid",
+                  "value": "~eq~MAXADMIN"
+                },
+                {
+                  "key": "_format",
+                  "value": "json"
+                },
+                {
+                  "key": "_compact",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "fa4f24f4-d1e0-9ce3-4a0b-5ebfe28bf15a",
+              "name": "BERNIE KANE WO RESP",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "MAXAUTH",
+                    "value": "YmVybmllOmJlcm5pZQ==",
+                    "enabled": true,
+                    "warning": ""
+                  }
+                ],
+                "body": {},
+                "url": {
+                  "raw": "https://maximo.eam360.com/maxrest/rest/os/e3mwo?personid=BERNIE KANE&_format=json&_compact=1",
+                  "protocol": "https",
+                  "host": [
+                    "maximo",
+                    "eam360",
+                    "com"
+                  ],
+                  "path": [
+                    "maxrest",
+                    "rest",
+                    "os",
+                    "e3mwo"
+                  ],
+                  "query": [
+                    {
+                      "key": "personid",
+                      "value": "BERNIE KANE"
+                    },
+                    {
+                      "key": "_format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "_compact",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "name": "Cache-Control",
+                  "key": "Cache-Control",
+                  "value": "no-cache",
+                  "description": ""
+                },
+                {
+                  "name": "Connection",
+                  "key": "Connection",
+                  "value": "Keep-Alive",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Language",
+                  "key": "Content-Language",
+                  "value": "en-US",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Length",
+                  "key": "Content-Length",
+                  "value": "27903",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": ""
+                },
+                {
+                  "name": "Date",
+                  "key": "Date",
+                  "value": "Wed, 12 Apr 2017 15:43:55 GMT",
+                  "description": ""
+                },
+                {
+                  "name": "Keep-Alive",
+                  "key": "Keep-Alive",
+                  "value": "timeout=10, max=100",
+                  "description": ""
+                },
+                {
+                  "name": "X-Powered-By",
+                  "key": "X-Powered-By",
+                  "value": "Servlet/3.0",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "2217",
+              "body": "{\"QueryE3MWOResponse\":{\"rsStart\":0,\"rsCount\":1,\"E3MWOSet\":{\"LABOR\":[{\"LABORCODE\":\"BERNIE K\",\"ORGID\":\"EAGLENA\",\"PERSONID\":\"BERNIE KANE\",\"ASSIGNMENT\":[{\"ASSIGNMENTID\":1460,\"WORKORDER\":[{\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:22:41-05:00\",\"DESCRIPTION\":\"Conveyor Overhaul- Pkg. Dept.\",\"E3MSAFETYISREAD\":false,\"ESTDUR\":2.0,\"FAILURECODE\":[{\"DESCRIPTION\":\"CONVEYOR LINE FAILURES\",\"FAILURECODE\":\"CONVEYOR\",\"FAILURECODEID\":135}],\"LOCATION\":\"BPM3100\",\"PHONE\":\"+639950129759\",\"PROBLEMCODE\":\"FAN\",\"REPAIRLOCFLAG\":false,\"REPORTDATE\":\"2017-04-12T10:21:09-05:00\",\"REPORTEDBY\":\"MAXADMIN\",\"SCHEDFINISH\":\"2017-04-12T11:21:57-05:00\",\"SCHEDSTART\":\"2017-04-12T10:21:57-05:00\",\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"WONUM\":\"1728\",\"WOPRIORITY\":1,\"WORKORDERID\":4421,\"WORKTYPE\":\"PM\",\"WOACTIVITY\":[{\"ASSETNUM\":\"13140\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:22:42-05:00\",\"DESCRIPTION\":\"INSPECT SWITCHES...\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BPM3100\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:22:39-05:00\",\"TASKID\":10,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T2999\",\"WORKORDERID\":4422,\"ASSET\":[{\"ASSETNUM\":\"13140\",\"ASSETUID\":126,\"DESCRIPTION\":\"Conveyor System- Pkg. Dept.\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"#1 Liquid Packaging Line\",\"LOCATION\":\"BPM3100\",\"LOCATIONSID\":95}]},{\"ASSETNUM\":\"13140\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:22:42-05:00\",\"DESCRIPTION\":\"INSPECT DRIVE MOTOR AND MOUNTS\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BPM3100\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:22:39-05:00\",\"TASKID\":20,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3000\",\"WORKORDERID\":4423,\"ASSET\":[{\"ASSETNUM\":\"13140\",\"ASSETUID\":126,\"DESCRIPTION\":\"Conveyor System- Pkg. Dept.\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"#1 Liquid Packaging Line\",\"LOCATION\":\"BPM3100\",\"LOCATIONSID\":95}]},{\"ASSETNUM\":\"13140\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:22:42-05:00\",\"DESCRIPTION\":\"CLEAN MOTOR\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BPM3100\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:22:39-05:00\",\"TASKID\":30,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3001\",\"WORKORDERID\":4424,\"ASSET\":[{\"ASSETNUM\":\"13140\",\"ASSETUID\":126,\"DESCRIPTION\":\"Conveyor System- Pkg. Dept.\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"#1 Liquid Packaging Line\",\"LOCATION\":\"BPM3100\",\"LOCATIONSID\":95}]},{\"ASSETNUM\":\"13140\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:22:42-05:00\",\"DESCRIPTION\":\"INSPECT GEAR REDUCER UNIT. CHECK GEAR BOX OIL.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BPM3100\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:22:39-05:00\",\"TASKID\":40,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3002\",\"WORKORDERID\":4425,\"ASSET\":[{\"ASSETNUM\":\"13140\",\"ASSETUID\":126,\"DESCRIPTION\":\"Conveyor System- Pkg. Dept.\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"#1 Liquid Packaging Line\",\"LOCATION\":\"BPM3100\",\"LOCATIONSID\":95}]},{\"ASSETNUM\":\"13140\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:22:42-05:00\",\"DESCRIPTION\":\"INSPECT, CLEAN, AND LUBRICATE DRIVE CHAIN.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BPM3100\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:22:39-05:00\",\"TASKID\":50,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3003\",\"WORKORDERID\":4426,\"ASSET\":[{\"ASSETNUM\":\"13140\",\"ASSETUID\":126,\"DESCRIPTION\":\"Conveyor System- Pkg. Dept.\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"#1 Liquid Packaging Line\",\"LOCATION\":\"BPM3100\",\"LOCATIONSID\":95}]},{\"ASSETNUM\":\"13140\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:22:42-05:00\",\"DESCRIPTION\":\"CHECK CONVEYOR BELT AND PULLEYS...\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BPM3100\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:22:39-05:00\",\"TASKID\":60,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3004\",\"WORKORDERID\":4427,\"ASSET\":[{\"ASSETNUM\":\"13140\",\"ASSETUID\":126,\"DESCRIPTION\":\"Conveyor System- Pkg. Dept.\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"#1 Liquid Packaging Line\",\"LOCATION\":\"BPM3100\",\"LOCATIONSID\":95}]},{\"ASSETNUM\":\"13140\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:22:42-05:00\",\"DESCRIPTION\":\"INSPECT AND LUBRICATE ROLLER BEARINGS AND WHEELS.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BPM3100\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:22:39-05:00\",\"TASKID\":70,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3005\",\"WORKORDERID\":4428,\"ASSET\":[{\"ASSETNUM\":\"13140\",\"ASSETUID\":126,\"DESCRIPTION\":\"Conveyor System- Pkg. Dept.\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"#1 Liquid Packaging Line\",\"LOCATION\":\"BPM3100\",\"LOCATIONSID\":95}]},{\"ASSETNUM\":\"13140\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:22:42-05:00\",\"DESCRIPTION\":\"OPERATE CONVEYOR TO ENSURE THAT UNIT RUNS\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BPM3100\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:22:39-05:00\",\"TASKID\":80,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3006\",\"WORKORDERID\":4429,\"ASSET\":[{\"ASSETNUM\":\"13140\",\"ASSETUID\":126,\"DESCRIPTION\":\"Conveyor System- Pkg. Dept.\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"#1 Liquid Packaging Line\",\"LOCATION\":\"BPM3100\",\"LOCATIONSID\":95}]}],\"WPMATERIAL\":[{\"DESCRIPTION\":\"Gloves, Disposable Latex\",\"ITEMQTY\":1.0,\"LINETYPE\":\"ITEM\",\"LOCATION\":\"CENTRAL\",\"STORELOCSITE\":\"BEDFORD\",\"UNITCOST\":3.52,\"WPITEMID\":498,\"INVENTORY\":[{\"AVBLBALANCE\":9.0,\"CURBAL\":11.0,\"ISSUEUNIT\":\"BOX\",\"ITEMNUM\":\"GLOVES\",\"ITEMSETID\":\"SET1\",\"LOCATION\":\"CENTRAL\"}],\"ITEM\":[{\"DESCRIPTION\":\"Gloves, Disposable Latex\",\"ITEMNUM\":\"GLOVES\",\"ITEMSETID\":\"SET1\",\"ROTATING\":false}]},{\"DESCRIPTION\":\"Oil- Air Cylinder\",\"ITEMQTY\":1.0,\"LINETYPE\":\"ITEM\",\"LOCATION\":\"CENTRAL\",\"STORELOCSITE\":\"BEDFORD\",\"UNITCOST\":0.22,\"WPITEMID\":499,\"INVENTORY\":[{\"AVBLBALANCE\":375.0,\"CURBAL\":394.0,\"ISSUEUNIT\":\"EACH\",\"ITEMNUM\":\"TEX115\",\"ITEMSETID\":\"SET1\",\"LOCATION\":\"CENTRAL\"}],\"ITEM\":[{\"DESCRIPTION\":\"Oil- Air Cylinder\",\"ITEMNUM\":\"TEX115\",\"ITEMSETID\":\"SET1\",\"ROTATING\":false}]},{\"DESCRIPTION\":\"Rags, Cloth\",\"ITEMQTY\":5.0,\"LINETYPE\":\"ITEM\",\"LOCATION\":\"CENTRAL\",\"STORELOCSITE\":\"BEDFORD\",\"UNITCOST\":0.02,\"WPITEMID\":500,\"INVENTORY\":[{\"AVBLBALANCE\":135.0,\"CURBAL\":158.0,\"ISSUEUNIT\":\"BOX\",\"ITEMNUM\":\"Z-RAGS\",\"ITEMSETID\":\"SET1\",\"LOCATION\":\"CENTRAL\"}],\"ITEM\":[{\"DESCRIPTION\":\"Rags, Cloth\",\"ISSUEUNIT\":\"EACH\",\"ITEMNUM\":\"Z-RAGS\",\"ITEMSETID\":\"SET1\",\"ROTATING\":false}]}],\"ASSET\":[{\"ASSETNUM\":\"13140\",\"ASSETUID\":126,\"DESCRIPTION\":\"Conveyor System- Pkg. Dept.\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"#1 Liquid Packaging Line\",\"LOCATION\":\"BPM3100\",\"LOCATIONSID\":95}],\"FAILUREREPORT\":[{\"ASSETNUM\":\"13140\",\"FAILURECODE\":[{\"DESCRIPTION\":\"Circulating Fan Failure\",\"FAILURECODE\":\"FAN\",\"FAILURECODEID\":46}],\"FAILUREREPORTID\":1805,\"LINENUM\":2003,\"TYPE\":\"PROBLEM\"}],\"WOSERVICEADDRESS\":[{\"ADDRESSISCHANGED\":true,\"ADDRESSLINE2\":\"Via Monte S. Primo, 5, 22074 Lomazzo CO, Italy\",\"LATITUDEY\":45.703218,\"LONGITUDEX\":9.033057,\"WOSERVICEADDRESSID\":8051}],\"PERSON\":[{\"DISPLAYNAME\":\"John\",\"PERSONID\":\"MAXADMIN\",\"PRIMARYPHONE\":\"+639950129759\"}]}]},{\"ASSIGNMENTID\":1463,\"WORKORDER\":[{\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:40-05:00\",\"DESCRIPTION\":\"EM DG Half-Yearly Inspection\",\"DESCRIPTION_LONGDESCRIPTION\":\"<div>Carry out the EM DG inspection as per the Task list and the work instruction manual attached with this work order. Please ensure the following:<\\/div><div><br \\/><\\/div><div>1) Electrical Clarence is obtained\\u00a0<\\/div><div><br \\/><\\/div><div>2) \\u00a0Work Permit is obtained \\u00a0<\\/div><div><br \\/><\\/div><div>3) \\u00a0Safety Department is informed of the Maintenance<\\/div><div><br \\/><\\/div><div>4) Materials and tools are planned for the work<\\/div><div><br \\/><\\/div><div>5) Operator clearance is \\u00a0obtained to start the work<\\/div><div><br \\/><\\/div><div>6) Dry run is performed and operator sign-off is obtained<\\/div><div><br \\/><\\/div>7) House keeping activities are completed. \\u00a0<!-- RICH TEXT -->\",\"E3MSAFETYISREAD\":false,\"ESTDUR\":9.0,\"FAILURECODE\":[{\"DESCRIPTION\":\"Facility Maintenance & HVAC\",\"FAILURECODE\":\"BLDGS\",\"FAILURECODEID\":41}],\"LOCATION\":\"BR230\",\"PHONE\":\"+639950129759\",\"REPAIRLOCFLAG\":false,\"REPORTDATE\":\"2017-04-12T10:22:58-05:00\",\"REPORTEDBY\":\"MAXADMIN\",\"SCHEDFINISH\":\"2017-04-12T11:23:28-05:00\",\"SCHEDSTART\":\"2017-04-12T10:23:28-05:00\",\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"WONUM\":\"1729\",\"WOPRIORITY\":3,\"WORKORDERID\":4430,\"WORKTYPE\":\"PM\",\"DOCLINKS\":[{\"CREATEBY\":\"MAXADMIN\",\"CREATEDATE\":\"2017-02-06T05:30:42-06:00\",\"DESCRIPTION\":\"EMDGMaint.Manual1466594279826.pdf\",\"DOCINFOID\":252,\"DOCTYPE\":\"Attachments\",\"DOCUMENT\":\"1208\",\"OWNERID\":4430,\"OWNERTABLE\":\"WORKORDER\",\"URLNAME\":\"\\\\\\\\198.23.115.163\\\\DOCLINKS\\\\ATTACHMENTS\\\\EMDGMaint.Manual1466594279826.pdf\",\"URLTYPE\":\"FILE\",\"WEBURL\":\"https:\\/\\/maximo.eam360.com\\/ATTACHMENTS\\/EMDGMaint.Manual1466594279826.pdf\"}],\"WOACTIVITY\":[{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:40-05:00\",\"DESCRIPTION\":\"Review generator test logs.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":10,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3007\",\"WOPRIORITY\":8,\"WORKORDERID\":4431,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:40-05:00\",\"DESCRIPTION\":\"Check all hose connections for tightness.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":20,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3008\",\"WOPRIORITY\":8,\"WORKORDERID\":4432,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:41-05:00\",\"DESCRIPTION\":\"Check coolant level.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":30,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3009\",\"WOPRIORITY\":8,\"WORKORDERID\":4433,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:41-05:00\",\"DESCRIPTION\":\"Take battery hydrometer readings.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":40,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3010\",\"WOPRIORITY\":8,\"WORKORDERID\":4434,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:41-05:00\",\"DESCRIPTION\":\"Check battery charge rate of each charger, record.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":50,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3011\",\"WOPRIORITY\":8,\"WORKORDERID\":4435,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:41-05:00\",\"DESCRIPTION\":\"Check battery voltage and water level.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":60,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3012\",\"WOPRIORITY\":8,\"WORKORDERID\":4436,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:41-05:00\",\"DESCRIPTION\":\"Check battery posts, cables for tightness.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":70,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3013\",\"WOPRIORITY\":8,\"WORKORDERID\":4437,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:41-05:00\",\"DESCRIPTION\":\"Check heat exchangers.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":80,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3014\",\"WOPRIORITY\":8,\"WORKORDERID\":4438,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:41-05:00\",\"DESCRIPTION\":\"Place control switch on each control board to off.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":90,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3015\",\"WOPRIORITY\":8,\"WORKORDERID\":4439,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:41-05:00\",\"DESCRIPTION\":\"Check V-belts, deflection 9\\/16 to 13\\/16 in..\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":100,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3016\",\"WOPRIORITY\":8,\"WORKORDERID\":4440,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:42-05:00\",\"DESCRIPTION\":\"Clean entire unit.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":110,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3017\",\"WOPRIORITY\":8,\"WORKORDERID\":4441,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:42-05:00\",\"DESCRIPTION\":\"Remove and clean air induction filters.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":120,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3018\",\"WOPRIORITY\":8,\"WORKORDERID\":4442,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:42-05:00\",\"DESCRIPTION\":\"Remove generator panels from rear of generator.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":130,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3019\",\"WOPRIORITY\":8,\"WORKORDERID\":4443,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:42-05:00\",\"DESCRIPTION\":\"Check rear bearing for lube plugs.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":140,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3020\",\"WOPRIORITY\":8,\"WORKORDERID\":4444,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]},{\"ASSETNUM\":\"11230\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:42-05:00\",\"DESCRIPTION\":\"Grease fan drive bearing.\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR230\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:23:37-05:00\",\"TASKID\":150,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3021\",\"WOPRIORITY\":8,\"WORKORDERID\":4445,\"WORKTYPE\":\"PM\",\"ASSET\":[{\"ASSETNUM\":\"11230\",\"ASSETUID\":138,\"DESCRIPTION\":\"Emergency Generator-1\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}]}],\"WPMATERIAL\":[{\"DESCRIPTION\":\"Pin, Split- E-43\",\"ITEMQTY\":4.0,\"LINETYPE\":\"ITEM\",\"LOCATION\":\"CENTRAL\",\"STORELOCSITE\":\"BEDFORD\",\"UNITCOST\":3.79,\"WPITEMID\":501,\"INVENTORY\":[{\"AVBLBALANCE\":380.0,\"CURBAL\":455.0,\"ISSUEUNIT\":\"EACH\",\"ITEMNUM\":\"60-051\",\"ITEMSETID\":\"SET1\",\"LOCATION\":\"CENTRAL\"}],\"ITEM\":[{\"DESCRIPTION\":\"Pin, Split- E-43\",\"ITEMNUM\":\"60-051\",\"ITEMSETID\":\"SET1\",\"ROTATING\":false}]},{\"DESCRIPTION\":\"Rags, Cloth\",\"ITEMQTY\":1.0,\"LINETYPE\":\"ITEM\",\"LOCATION\":\"CENTRAL\",\"STORELOCSITE\":\"BEDFORD\",\"UNITCOST\":0.02,\"WPITEMID\":502,\"INVENTORY\":[{\"AVBLBALANCE\":135.0,\"CURBAL\":158.0,\"ISSUEUNIT\":\"BOX\",\"ITEMNUM\":\"Z-RAGS\",\"ITEMSETID\":\"SET1\",\"LOCATION\":\"CENTRAL\"}],\"ITEM\":[{\"DESCRIPTION\":\"Rags, Cloth\",\"ISSUEUNIT\":\"EACH\",\"ITEMNUM\":\"Z-RAGS\",\"ITEMSETID\":\"SET1\",\"ROTATING\":false}]},{\"DESCRIPTION\":\"Oil- Air Cylinder\",\"ITEMQTY\":1.0,\"LINETYPE\":\"ITEM\",\"LOCATION\":\"CENTRAL\",\"STORELOCSITE\":\"BEDFORD\",\"UNITCOST\":0.22,\"WPITEMID\":503,\"INVENTORY\":[{\"AVBLBALANCE\":375.0,\"CURBAL\":394.0,\"ISSUEUNIT\":\"EACH\",\"ITEMNUM\":\"TEX115\",\"ITEMSETID\":\"SET1\",\"LOCATION\":\"CENTRAL\"}],\"ITEM\":[{\"DESCRIPTION\":\"Oil- Air Cylinder\",\"ITEMNUM\":\"TEX115\",\"ITEMSETID\":\"SET1\",\"ROTATING\":false}]},{\"DESCRIPTION\":\"Grease\",\"ITEMQTY\":1.0,\"LINETYPE\":\"ITEM\",\"LOCATION\":\"CENTRAL\",\"STORELOCSITE\":\"BEDFORD\",\"UNITCOST\":5.2,\"WPITEMID\":504,\"INVENTORY\":[{\"AVBLBALANCE\":277.0,\"CURBAL\":298.0,\"ISSUEUNIT\":\"EACH\",\"ITEMNUM\":\"Z-LG1\",\"ITEMSETID\":\"SET1\",\"LOCATION\":\"CENTRAL\"}],\"ITEM\":[{\"DESCRIPTION\":\"Grease\",\"ITEMNUM\":\"Z-LG1\",\"ITEMSETID\":\"SET1\",\"ROTATING\":false}]}],\"ASSET\":[{\"ASSETNUM\":\"11231\",\"ASSETUID\":1796,\"DESCRIPTION\":\"Emergency Generator-2\",\"SITEID\":\"BEDFORD\",\"ASSETMETER\":[{\"ACTIVE\":true,\"ASSETMETERID\":57,\"AVERAGE\":24.0,\"LASTREADING\":\"55,000\",\"LASTREADINGDATE\":\"2017-03-27T01:19:00-05:00\",\"LASTREADINGINSPCTR\":\"JACOB\",\"LINEARASSETMETERID\":0,\"METERNAME\":\"RUNHOURS\",\"READINGTYPE\":\"DELTA\"}],\"ASSETSPEC\":[{\"ASSETATTRID\":\"HUMIDITY\",\"ASSETSPECID\":2263,\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-02-09T21:51:55-06:00\",\"CLASSSTRUCTUREID\":\"1338\",\"CONTINUOUS\":false,\"LINEARASSETSPECID\":0,\"MEASUREUNITID\":\"PERCENTAGE\",\"ASSETATTRIBUTE\":[{\"DATATYPE\":\"NUMERIC\",\"DESCRIPTION\":\"Humidity\"}]},{\"ASSETATTRID\":\"ROOMTEMP\",\"ASSETSPECID\":2264,\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-02-09T21:51:55-06:00\",\"CLASSSTRUCTUREID\":\"1338\",\"CONTINUOUS\":false,\"LINEARASSETSPECID\":0,\"MEASUREUNITID\":\"DEG C\",\"ASSETATTRIBUTE\":[{\"DATATYPE\":\"NUMERIC\",\"DESCRIPTION\":\"Room Temperature\"}]}]}],\"LOCATIONS\":[{\"DESCRIPTION\":\"Boiler Room Emergency Generator\",\"LOCATION\":\"BR230\",\"LOCATIONSID\":44}],\"WOSERVICEADDRESS\":[{\"ADDRESSISCHANGED\":true,\"ADDRESSLINE2\":\"Via Lombardia, 75, 22074 Lomazzo CO, Italy\",\"LATITUDEY\":45.677741,\"LONGITUDEX\":9.039987,\"WOSERVICEADDRESSID\":8098}],\"PERSON\":[{\"DISPLAYNAME\":\"John\",\"PERSONID\":\"MAXADMIN\",\"PRIMARYPHONE\":\"+639950129759\"}],\"WOSAFETYLINK\":[{\"E3MISREAD\":false,\"HAZARDDESCRIPTION\":\"Excessive noise\",\"HAZARDID\":\"NOISE\",\"WOSAFETYDATASOURCE\":\"WO\",\"WOSAFETYLINKID\":1277,\"WOHAZARDPREC\":[{\"DESCRIPTION\":\"Hearing Protection\",\"HAZARDID\":\"NOISE\",\"PRECAUTIONID\":\"EARPLUGS\",\"WOHAZARDPRECID\":130,\"WOSAFETYDATASOURCE\":\"WO\"}]}],\"WORKORDERSPEC\":[{\"ASSETATTRID\":\"HUMIDITY\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:22:58-05:00\",\"CLASSSPECID\":545,\"CLASSSTRUCTUREID\":\"1338\",\"DISPLAYSEQUENCE\":1,\"MANDATORY\":false,\"MEASUREUNITID\":\"%\",\"NUMVALUE\":90.0,\"REFOBJECTID\":4430,\"REFOBJECTNAME\":\"WORKORDER\",\"WORKORDERSPECID\":244,\"ASSETATTRIBUTE\":[{\"DATATYPE\":\"NUMERIC\",\"DESCRIPTION\":\"Humidity\"}]},{\"ASSETATTRID\":\"ROOMTEMP\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:22:58-05:00\",\"CLASSSPECID\":546,\"CLASSSTRUCTUREID\":\"1338\",\"DISPLAYSEQUENCE\":2,\"MANDATORY\":false,\"MEASUREUNITID\":\"DEG C\",\"NUMVALUE\":35.0,\"REFOBJECTID\":4430,\"REFOBJECTNAME\":\"WORKORDER\",\"WORKORDERSPECID\":245,\"ASSETATTRIBUTE\":[{\"DATATYPE\":\"NUMERIC\",\"DESCRIPTION\":\"Room Temperature\"}]}]}]},{\"ASSIGNMENTID\":1466,\"WORKORDER\":[{\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:26:07-05:00\",\"DESCRIPTION\":\"HVAC Quarterly Inspections & Certification\",\"E3MSAFETYISREAD\":false,\"ESTDUR\":2.5,\"FAILURECODE\":[{\"DESCRIPTION\":\" CLEAN EQUIPMENT\",\"FAILURECODE\":\"CLEAN\",\"FAILURECODEID\":155}],\"LOCATION\":\"BR200\",\"PHONE\":\"+639950129759\",\"PROBLEMCODE\":\"CLOGGED\",\"REPAIRLOCFLAG\":false,\"REPORTDATE\":\"2017-04-12T10:23:57-05:00\",\"REPORTEDBY\":\"MAXADMIN\",\"SCHEDFINISH\":\"2017-04-13T21:00:00-05:00\",\"SCHEDSTART\":\"2017-04-13T18:45:00-05:00\",\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"WONUM\":\"1730\",\"WOPRIORITY\":2,\"WORKORDERID\":4446,\"WORKTYPE\":\"PM\",\"DOCLINKS\":[{\"CREATEBY\":\"JACK\",\"CREATEDATE\":\"2017-03-17T03:33:27-05:00\",\"DESCRIPTION\":\"3749_1489739574137.jpg\",\"DOCINFOID\":301,\"DOCTYPE\":\"Attachments\",\"DOCUMENT\":\"1257\",\"E3MPRIVATEID\":\"0CFD43D2-2FE1-4674-9B7E-4BB661EDCBCA\",\"OWNERID\":4446,\"OWNERTABLE\":\"WORKORDER\",\"URLNAME\":\"\\\\\\\\198.23.115.163\\\\DOCLINKS\\\\ATTACHMENTS\\\\3749_14897395741371489739608072.jpg\",\"URLTYPE\":\"FILE\",\"WEBURL\":\"https:\\/\\/maximo.eam360.com\\/ATTACHMENTS\\/3749_14897395741371489739608072.jpg\"},{\"CREATEBY\":\"JACK\",\"CREATEDATE\":\"2017-03-17T09:30:07-05:00\",\"DESCRIPTION\":\"audio_1489760995539.m4a\",\"DOCINFOID\":320,\"DOCTYPE\":\"Attachments\",\"DOCUMENT\":\"1276\",\"OWNERID\":4446,\"OWNERTABLE\":\"WORKORDER\",\"URLNAME\":\"\\\\\\\\198.23.115.163\\\\DOCLINKS\\\\ATTACHMENTS\\\\audio_14897609955391489761007122.m4a\",\"URLTYPE\":\"FILE\",\"WEBURL\":\"https:\\/\\/maximo.eam360.com\\/ATTACHMENTS\\/audio_14897609955391489761007122.m4a\"}],\"WOACTIVITY\":[{\"ASSETNUM\":\"11200\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:25:33-05:00\",\"DESCRIPTION\":\"Check Electrical Subsystems and components\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR200\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:25:30-05:00\",\"TASKID\":10,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3022\",\"WORKORDERID\":4447,\"ASSET\":[{\"ASSETNUM\":\"11200\",\"ASSETUID\":123,\"DESCRIPTION\":\"HVAC System- 50 Ton Cool Cap\\/ 450000 Btu Heat Cap\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"HVAC System- Main Office\",\"LOCATION\":\"BR200\",\"LOCATIONSID\":196}]},{\"ASSETNUM\":\"11200\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:25:33-05:00\",\"DESCRIPTION\":\"Check Motor and Mounts\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR200\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:25:30-05:00\",\"TASKID\":20,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3023\",\"WORKORDERID\":4448,\"ASSET\":[{\"ASSETNUM\":\"11200\",\"ASSETUID\":123,\"DESCRIPTION\":\"HVAC System- 50 Ton Cool Cap\\/ 450000 Btu Heat Cap\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"HVAC System- Main Office\",\"LOCATION\":\"BR200\",\"LOCATIONSID\":196}]},{\"ASSETNUM\":\"11200\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:25:33-05:00\",\"DESCRIPTION\":\"Check Filtration Units\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR200\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:25:30-05:00\",\"TASKID\":30,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3024\",\"WORKORDERID\":4449,\"ASSET\":[{\"ASSETNUM\":\"11200\",\"ASSETUID\":123,\"DESCRIPTION\":\"HVAC System- 50 Ton Cool Cap\\/ 450000 Btu Heat Cap\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"HVAC System- Main Office\",\"LOCATION\":\"BR200\",\"LOCATIONSID\":196}]},{\"ASSETNUM\":\"11200\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:25:33-05:00\",\"DESCRIPTION\":\"Conduct Air Quality Chemical Tests\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR200\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:25:30-05:00\",\"TASKID\":40,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3025\",\"WORKORDERID\":4450,\"ASSET\":[{\"ASSETNUM\":\"11200\",\"ASSETUID\":123,\"DESCRIPTION\":\"HVAC System- 50 Ton Cool Cap\\/ 450000 Btu Heat Cap\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"HVAC System- Main Office\",\"LOCATION\":\"BR200\",\"LOCATIONSID\":196}]},{\"ASSETNUM\":\"11200\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:25:33-05:00\",\"DESCRIPTION\":\"Operate to ensure safety\",\"ESTDUR\":0.0,\"ISTASK\":true,\"LOCATION\":\"BR200\",\"ORGID\":\"EAGLENA\",\"REPAIRLOCFLAG\":false,\"SITEID\":\"BEDFORD\",\"STATUS\":\"APPR\",\"STATUSDATE\":\"2017-04-12T10:25:30-05:00\",\"TASKID\":50,\"WOCLASS\":\"ACTIVITY\",\"WONUM\":\"T3026\",\"WORKORDERID\":4451,\"ASSET\":[{\"ASSETNUM\":\"11200\",\"ASSETUID\":123,\"DESCRIPTION\":\"HVAC System- 50 Ton Cool Cap\\/ 450000 Btu Heat Cap\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"HVAC System- Main Office\",\"LOCATION\":\"BR200\",\"LOCATIONSID\":196}]}],\"WPMATERIAL\":[{\"DESCRIPTION\":\"SPF343 COMPRESSED AIR SYSTEM\",\"ITEMQTY\":1.0,\"LINETYPE\":\"ITEM\",\"LOCATION\":\"CENTRAL\",\"STORELOCSITE\":\"BEDFORD\",\"UNITCOST\":0.0,\"WPITEMID\":505,\"INVENTORY\":[{\"AVBLBALANCE\":-1.0,\"CURBAL\":1.0,\"ISSUEUNIT\":\"EACH\",\"ITEMNUM\":\"SPAIR143\",\"ITEMSETID\":\"SET1\",\"LOCATION\":\"CENTRAL\"}],\"ITEM\":[{\"DESCRIPTION\":\"SPF343 COMPRESSED AIR SYSTEM\",\"ITEMNUM\":\"SPAIR143\",\"ITEMSETID\":\"SET1\",\"ROTATING\":true}]}],\"ASSET\":[{\"ASSETNUM\":\"11200\",\"ASSETUID\":123,\"DESCRIPTION\":\"HVAC System- 50 Ton Cool Cap\\/ 450000 Btu Heat Cap\",\"SITEID\":\"BEDFORD\"}],\"LOCATIONS\":[{\"DESCRIPTION\":\"HVAC System- Main Office\",\"LOCATION\":\"BR200\",\"LOCATIONSID\":196}],\"FAILUREREPORT\":[{\"ASSETNUM\":\"11200\",\"FAILURECODE\":[{\"DESCRIPTION\":\"EQUIPMENT CLOGGED\",\"FAILURECODE\":\"CLOGGED\",\"FAILURECODEID\":147}],\"FAILUREREPORTID\":1807,\"LINENUM\":2113,\"TYPE\":\"PROBLEM\"}],\"WOSERVICEADDRESS\":[{\"ADDRESSISCHANGED\":true,\"ADDRESSLINE2\":\"Viale Como, 2, 22074 Lomazzo CO, Italy\",\"LATITUDEY\":45.698982,\"LONGITUDEX\":9.036786,\"WOSERVICEADDRESSID\":8115}],\"PERSON\":[{\"DISPLAYNAME\":\"John\",\"PERSONID\":\"MAXADMIN\",\"PRIMARYPHONE\":\"+639950129759\"}],\"WORKORDERSPEC\":[{\"ASSETATTRID\":\"CAPACITY\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:57-05:00\",\"CLASSSTRUCTUREID\":\"BMXAA1337\",\"DISPLAYSEQUENCE\":2,\"MANDATORY\":false,\"NUMVALUE\":150.0,\"REFOBJECTID\":4446,\"REFOBJECTNAME\":\"WORKORDER\",\"WORKORDERSPECID\":246,\"ASSETATTRIBUTE\":[{\"DATATYPE\":\"NUMERIC\",\"DESCRIPTION\":\"Capacity\"},{\"DATATYPE\":\"NUMERIC\"}]},{\"ALNVALUE\":\"HVAC\",\"ASSETATTRID\":\"TYPE\",\"CHANGEBY\":\"MAXADMIN\",\"CHANGEDATE\":\"2017-04-12T10:23:57-05:00\",\"CLASSSTRUCTUREID\":\"BMXAA1337\",\"DISPLAYSEQUENCE\":1,\"MANDATORY\":false,\"REFOBJECTID\":4446,\"REFOBJECTNAME\":\"WORKORDER\",\"WORKORDERSPECID\":247,\"ASSETATTRIBUTE\":[{\"DATATYPE\":\"ALN\",\"DESCRIPTION\":\"Type\"}]}]}]}]}]}}}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "8c40f03b-a178-6e5e-9196-38b293d6714a",
+          "name": "GetIndividualWorkOrder",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "MAXAUTH",
+                "value": "bWF4YWRtaW46bWF4YWRtaW4="
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "http://169.54.173.231:9081/maxrest/rest/os/E3MTDWO/4051?_format=json&_compact=1",
+              "protocol": "http",
+              "host": [
+                "169",
+                "54",
+                "173",
+                "231"
+              ],
+              "port": "9081",
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "E3MTDWO",
+                "4051"
+              ],
+              "query": [
+                {
+                  "key": "_format",
+                  "value": "json"
+                },
+                {
+                  "key": "_compact",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0f28bbc5-9968-caac-00eb-2005701f3422",
+          "name": "GetWorkOrderSummary",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "MAXAUTH",
+                "value": "bWF4YWRtaW46bWF4YWRtaW4="
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "http://169.54.173.231:9081/maxrest/rest/os/e3msummary/4051?_format=json&_compact=1",
+              "protocol": "http",
+              "host": [
+                "169",
+                "54",
+                "173",
+                "231"
+              ],
+              "port": "9081",
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "e3msummary",
+                "4051"
+              ],
+              "query": [
+                {
+                  "key": "_format",
+                  "value": "json"
+                },
+                {
+                  "key": "_compact",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "8a979c23-8e73-c894-4ade-b45963b1a0bb",
+      "name": "MastersData",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "e4ad7b26-a8f9-a057-e947-1b041da7dc38",
+          "name": "GetMasterMaterials",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "maxauth",
+                "value": "bWRpeG9uOndlbGNvbWU="
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "MATUSETRANS.ID4.POSITIVEQUANTITY",
+                  "value": "2",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://azurapower1-dev.emaximo.com/maxrest/rest/os/E3MITEMSET?status=~eq~ACTIVE&siteid=AZURA&_format=json&_compact=1",
+              "protocol": "https",
+              "host": [
+                "azurapower1-dev",
+                "emaximo",
+                "com"
+              ],
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "E3MITEMSET"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "~eq~ACTIVE",
+                  "equals": true
+                },
+                {
+                  "key": "siteid",
+                  "value": "AZURA",
+                  "equals": true
+                },
+                {
+                  "key": "_format",
+                  "value": "json",
+                  "equals": true
+                },
+                {
+                  "key": "_compact",
+                  "value": "1",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b85924a3-787e-a342-2b84-fc2cad618532",
+          "name": "GetMasterLocationandAssets",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "maxauth",
+                "value": "bWRpeG9uOndlbGNvbWU="
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "MATUSETRANS.ID4.POSITIVEQUANTITY",
+                  "value": "2",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://azurapower1-dev.emaximo.com/maxrest/rest/os/e3masset/?siteid=AZURA&status=operating,active&_format=json&_compact=1",
+              "protocol": "https",
+              "host": [
+                "azurapower1-dev",
+                "emaximo",
+                "com"
+              ],
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "e3masset",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "siteid",
+                  "value": "AZURA",
+                  "equals": true
+                },
+                {
+                  "key": "status",
+                  "value": "operating,active",
+                  "equals": true
+                },
+                {
+                  "key": "_format",
+                  "value": "json",
+                  "equals": true
+                },
+                {
+                  "key": "_compact",
+                  "value": "1",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "03300516-88ea-9161-d2b0-843eeb83cd48",
+          "name": "GetMasterFailureCode",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "maxauth",
+                "value": "bWRpeG9uOndlbGNvbWU="
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "MATUSETRANS.ID4.POSITIVEQUANTITY",
+                  "value": "2",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://azurapower1-dev.emaximo.com/maxrest/rest/os/E3MFAILURECODES/?type=PROBLEM,CAUSE,REMEDY&_format=json&_compact=1",
+              "protocol": "https",
+              "host": [
+                "azurapower1-dev",
+                "emaximo",
+                "com"
+              ],
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "E3MFAILURECODES",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "PROBLEM,CAUSE,REMEDY",
+                  "equals": true
+                },
+                {
+                  "key": "_format",
+                  "value": "json",
+                  "equals": true
+                },
+                {
+                  "key": "_compact",
+                  "value": "1 ",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b4e15602-cb94-99eb-224a-aa9a7e3c58c8",
+          "name": "GetWorkTypes",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "maxauth",
+                "value": "bWF4YWRtaW46bWF4YWRtaW4="
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "MATUSETRANS.ID4.POSITIVEQUANTITY",
+                  "value": "2",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://169.54.173.231:9081/maxrest/rest/os/e3mtypewo/?orgid=EAGLENA&_format=json&_compact=1",
+              "protocol": "http",
+              "host": [
+                "169",
+                "54",
+                "173",
+                "231"
+              ],
+              "port": "9081",
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "e3mtypewo",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "orgid",
+                  "value": "EAGLENA"
+                },
+                {
+                  "key": "_format",
+                  "value": "json"
+                },
+                {
+                  "key": "_compact",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0ce5101f-59b1-daa0-b7a4-2185e64a6737",
+          "name": "GetMasterLabourtime",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "maxauth",
+                "value": "bWF4YWRtaW46bWF4YWRtaW4="
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "MATUSETRANS.ID4.POSITIVEQUANTITY",
+                  "value": "2",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://169.54.173.231:9081/maxrest/rest/os/e3mwo/?personid=~eq~MAXADMIN&_format=json&_compact=1",
+              "protocol": "http",
+              "host": [
+                "169",
+                "54",
+                "173",
+                "231"
+              ],
+              "port": "9081",
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "e3mwo",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "personid",
+                  "value": "~eq~MAXADMIN"
+                },
+                {
+                  "key": "_format",
+                  "value": "json"
+                },
+                {
+                  "key": "_compact",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "cdec6bf0-456a-90b9-df79-e2571dd91cd7",
+          "name": "Get ORG settings",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "maxauth",
+                "value": "am9objp3ZWxjb21l"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "MATUSETRANS.ID4.POSITIVEQUANTITY",
+                  "value": "2",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://maximo.eam360.com:9081/maxrest/rest/os/e3mmaxvars?_format=json&_compact=1&orgid=~eq~EAGLENA&varname=E3M",
+              "protocol": "http",
+              "host": [
+                "maximo",
+                "eam360",
+                "com"
+              ],
+              "port": "9081",
+              "path": [
+                "maxrest",
+                "rest",
+                "os",
+                "e3mmaxvars"
+              ],
+              "query": [
+                {
+                  "key": "_format",
+                  "value": "json",
+                  "equals": true
+                },
+                {
+                  "key": "_compact",
+                  "value": "1",
+                  "equals": true
+                },
+                {
+                  "key": "orgid",
+                  "value": "~eq~EAGLENA",
+                  "equals": true
+                },
+                {
+                  "key": "varname",
+                  "value": "E3M",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "a900df8c-a20f-bef6-3fff-08386cfc1625",
+      "name": "Scan QR Code",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "MAXAUTH",
+            "value": "bWF4YWRtaW46bWF4YWRtaW4="
+          }
+        ],
+        "body": {},
+        "url": {
+          "raw": "https://maximo.eam360.com/maxrest/rest/os/demoasset/?_format=json&_compact=1&siteid=BEDFORD&assetnum=ME-C12678",
+          "protocol": "https",
+          "host": [
+            "maximo",
+            "eam360",
+            "com"
+          ],
+          "path": [
+            "maxrest",
+            "rest",
+            "os",
+            "demoasset",
+            ""
+          ],
+          "query": [
+            {
+              "key": "_format",
+              "value": "json"
+            },
+            {
+              "key": "_compact",
+              "value": "1"
+            },
+            {
+              "key": "siteid",
+              "value": "BEDFORD"
+            },
+            {
+              "key": "assetnum",
+              "value": "ME-C12678"
+            }
+          ]
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "105b18cf-d327-7524-2f1f-611bbd2f28b5",
+      "name": "Sign off Workorder - Feedback",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "MAXAUTH",
+            "value": "bWF4YWRtaW46bWF4YWRtaW4="
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "C_FEEDBACK.ID1.NAME",
+              "value": "jack",
+              "type": "text"
+            },
+            {
+              "key": "C_FEEDBACK.ID1.COMMENT",
+              "value": "completed",
+              "type": "text"
+            },
+            {
+              "key": "C_FEEDBACK.ID1.TITLE",
+              "value": "hvac",
+              "type": "text"
+            },
+            {
+              "key": "C_FEEDBACK.ID1.EMAIL",
+              "value": "demo@g.com",
+              "type": "text"
+            },
+            {
+              "key": "C_FEEDBACK.ID1.DOCLINKS.ID1-1.DESCRIPTION",
+              "value": "Signature_1495697050587.jpg",
+              "type": "text"
+            },
+            {
+              "key": "C_FEEDBACK.ID1.DOCLINKS.ID1-1.DOCUMENTDATA",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "C_FEEDBACK.ID1.DOCLINKS.ID1-1.URLNAME",
+              "value": "",
+              "type": "text"
+            },
+            {
+              "key": "_action",
+              "value": "AddChange",
+              "type": "text"
+            },
+            {
+              "key": "C_FEEDBACK.ID1.DOCLINKS.ID1-1.URLTYPE",
+              "value": "FILE",
+              "type": "text"
+            },
+            {
+              "key": "C_FEEDBACK.ID1.DOCLINKS.ID1-1.DOCTYPE",
+              "value": "Attachments",
+              "type": "text"
+            },
+            {
+              "key": "C_FEEDBACK.ID1.DOCLINKS.ID1-1.ADDINFO",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "_format",
+              "value": "json",
+              "type": "text"
+            },
+            {
+              "key": "_compact",
+              "value": "1",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "http://169.54.173.231:9081/maxrest/rest/os/e3mwoupdate/10037",
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "b8732b0d-6a95-7f28-57da-248bf777c6cc",
+      "name": "Get Reserved Materials ",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "MAXAUTH",
+            "value": "bWF4YWRtaW46bWF4YWRtaW4="
+          }
+        ],
+        "body": {},
+        "url": {
+          "raw": "http://169.54.173.231:9081/maxrest/rest/os/E3MMATUSERESERVE?wonum=~eq~4167&itemum=~eq~6I-2499&_format=json&_compact=1",
+          "protocol": "http",
+          "host": [
+            "169",
+            "54",
+            "173",
+            "231"
+          ],
+          "port": "9081",
+          "path": [
+            "maxrest",
+            "rest",
+            "os",
+            "E3MMATUSERESERVE"
+          ],
+          "query": [
+            {
+              "key": "wonum",
+              "value": "~eq~4167"
+            },
+            {
+              "key": "itemum",
+              "value": "~eq~6I-2499"
+            },
+            {
+              "key": "_format",
+              "value": "json"
+            },
+            {
+              "key": "_compact",
+              "value": "1"
+            }
+          ]
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "352f4bb7-59ea-c046-b1ac-c03b0526d777",
+      "name": "Related Records",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "MAXAUTH",
+            "value": "amFjazp3ZWxjb21l"
+          }
+        ],
+        "body": {},
+        "url": {
+          "raw": "http://169.54.173.231:9081/maxrest/rest/os/E3MRELATEDREC/?personid=~eq~JACK&_format=json&_compact=1",
+          "protocol": "http",
+          "host": [
+            "169",
+            "54",
+            "173",
+            "231"
+          ],
+          "port": "9081",
+          "path": [
+            "maxrest",
+            "rest",
+            "os",
+            "E3MRELATEDREC",
+            ""
+          ],
+          "query": [
+            {
+              "key": "personid",
+              "value": "~eq~JACK"
+            },
+            {
+              "key": "_format",
+              "value": "json"
+            },
+            {
+              "key": "_compact",
+              "value": "1"
+            }
+          ]
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "73f31f8a-4712-e8c3-b337-9bc915beaef2",
+      "name": "DELTA Meter reading update ",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "MAXAUTH",
+            "value": "amFjazp3ZWxjb21l"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "newreading",
+              "value": "250",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "newreadingdate",
+              "value": "2017-07-12T12:26:00+05:30",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "isdelta",
+              "value": "1",
+              "description": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://169.54.173.231:9081/maxrest/rest/os/e3mastmtr/38?_action=AddChange&_format=json&_compact=1",
+          "protocol": "http",
+          "host": [
+            "169",
+            "54",
+            "173",
+            "231"
+          ],
+          "port": "9081",
+          "path": [
+            "maxrest",
+            "rest",
+            "os",
+            "e3mastmtr",
+            "38"
+          ],
+          "query": [
+            {
+              "key": "_action",
+              "value": "AddChange",
+              "equals": true
+            },
+            {
+              "key": "_format",
+              "value": "json",
+              "equals": true
+            },
+            {
+              "key": "_compact",
+              "value": "1",
+              "equals": true
+            }
+          ]
+        },
+        "description": ""
+      },
+      "response": []
+    }
+  ]
+}
